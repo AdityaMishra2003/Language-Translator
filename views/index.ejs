@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translation Tool</title>
+    <!-- Link the script.js file for frontend logic -->
+    <script src="/script.js"></script>
+</head>
+<body>
+    <h2>Translation Tool</h2>
+    <form action="/translate" method="POST">
+        <label for="inputLanguage">Input Language:</label>
+        <select id="inputLanguage" name="inputLanguage">
+            <option value="en">English</option>
+            <!-- Add other language options as needed -->
+        </select>
+        <br><br>
+        <label for="outputLanguage">Output Language:</label>
+        <select id="outputLanguage" name="outputLanguage">
+            <option value="te">Telugu</option>
+            <option value="or">odia</option>
+            <!-- Add other language options as needed -->
+        </select>
+        <br><br>
+        <textarea id="inputText" name="inputText" rows="5" cols="50" placeholder="Enter text to translate"></textarea>
+        <br><br>
+        <button type="submit">Translate</button>
+        <br><br>
+        <textarea id="outputText" name="outputText" rows="5" cols="50" placeholder="Translated text will appear here" readonly><%= translatedText %></textarea>
+    </form>
+
+    <!-- History button and display area -->
+    <button type="button" onclick="fetchHistory()">History</button>
+    <div id="history">
+        <!-- Translation history will be displayed here -->
+    </div>
+</body>
+</html>
